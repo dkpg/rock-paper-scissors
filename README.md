@@ -1,0 +1,1 @@
+The objective of this project is to create a Rock, Paper, Scissors game.
