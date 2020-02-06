@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let computerSelection = function(myArray=[0,1,2]) {
+                return Math.floor(Math.random() * myArray.length)
+            }
+            let playerSelection = function(myChoices=["ROCK", "PAPER", "SCISSORS"]) {
+                let bb = prompt("Choose your option").toUpperCase();
+                return myChoices.indexOf(bb)
+            }
+        </script>
+    </body>
+</html>
