@@ -10,10 +10,11 @@
                 return myChoices.indexOf(bb)
             }
             let playRound = function(computer=computerSelection(), player=playerSelection()) {
-                if (player==0 && computer==1 || player==1 && computer==2 || player==2 && computer==3) {
-                    alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou lose! " +computer+ " beats " +player+ ".");            
-                } else if (player==1 && computer==0 || player==2 && computer==1 || player==3 && computer==2) {
-                alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou lose! " +computer+ " beats " +player+ ".");            
+                if (computer > player) {
+                    alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou lose! "
+                     +computer+ " beats " +player+ ".");            
+                } else if (player > computer) {
+                alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou won! " +computer+ " beats " +player+ ".");            
                 } else {
                     alert("You choose "+player+", computer choose " +computer+"." + "\n\nIt's a draw!") }
                 }
