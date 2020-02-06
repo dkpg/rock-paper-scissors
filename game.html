@@ -2,22 +2,46 @@
 <html>
     <body>
         <script>
-            let computerSelection = function(myArray=[0,1,2]) {
-                return Math.floor(Math.random() * myArray.length)
+            let computerSelection = function(computerArray=[0,1,2]) {
+                return Math.floor(Math.random() * computerArray.length)
             }
-            let playerSelection = function(myChoices=["ROCK", "PAPER", "SCISSORS"]) {
+            let playerSelection = function(playerArray=["ROCK", "PAPER", "SCISSORS"]) {
                 let bb = prompt("Choose your option").toUpperCase();
-                return myChoices.indexOf(bb)
+                return playerArray.indexOf(bb)
             }
             let playRound = function(computer=computerSelection(), player=playerSelection()) {
+                let StringArray=["Rock", "Paper", "Scissors"]
                 if (computer > player) {
-                    alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou lose! "
-                     +computer+ " beats " +player+ ".");            
+                    playerScore = StringArray[player]
+                    computerScore = StringArray[computer]
+                    ++computerScoreBoard
+                    alert("You choose "+playerScore+", computer choose " +computerScore+"." + "\n\nYou lose! " +computerScore+ " beats " +playerScore+ "." +"\n\nScore: Player: "+playerScoreBoard+" | "+"Computer: "+computerScoreBoard)            
                 } else if (player > computer) {
-                alert("You choose "+player+", computer choose " +computer+"." + "\n\nYou won! " +computer+ " beats " +player+ ".");            
+                    playerScore = StringArray[player]
+                    computerScore = StringArray[computer]
+                    ++playerScoreBoard
+                    alert("You choose "+playerScore+", computer choose " +computerScore+"." + "\n\nYou win! " +playerScore+ " beats " +computerScore+ "." +"\n\nScore: Player: "+playerScoreBoard+" | "+"Computer: "+computerScoreBoard)            
                 } else {
-                    alert("You choose "+player+", computer choose " +computer+"." + "\n\nIt's a draw!") }
+                    playerScore = StringArray[player]
+                    computerScore = StringArray[computer]
+                    alert("You choose "+playerScore+", computer choose " +computerScore+"." + "\n\nIt's a draw!"+"\n\nScore: Player: "+playerScoreBoard+" | "+"Computer: "+computerScoreBoard) }
                 }
+                playerScoreBoard = 0
+                computerScoreBoard = 0
+
+                
+                function game() {
+                    playRound();
+                    breakme: if (playerScoreBoard > 4) {
+                        alert("YOU WON :)")
+                    break breakme;
+                    }
+                    else if (computerScoreBoard > 4) {
+                        alert("YOU LOST :(")
+                        break breakme;
+                        }
+                     else game();
+                    }
 
         </script>
     </body>
